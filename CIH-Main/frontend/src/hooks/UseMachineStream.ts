@@ -2,11 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 
 // Define the shape of data coming from Python
 interface SensorData {
-  finished?: boolean; // <--- ADDED THIS (Handles the "Engine Died" signal)
+  finished?: boolean;
   cycle: number;
   RUL: number;
   status: 'Healthy' | 'Warning' | 'Critical';
   sensors: Record<string, number>;
+  failure_reasons?: string[];
 }
 
 export const useMachineStream = () => {
@@ -16,7 +17,7 @@ export const useMachineStream = () => {
   const ws = useRef<WebSocket | null>(null);
 
   useEffect(() => {
-    // Connect to your FastAPI Backend
+    // Connect to FastAPI Backend
     ws.current = new WebSocket('ws://localhost:8000/ws');
 
     ws.current.onopen = () => {
@@ -24,12 +25,15 @@ export const useMachineStream = () => {
       setIsConnected(true);
     };
 
-    ws.current.onclose = () => setIsConnected(false);
+    ws.current.onclose = () => {
+      console.log('Disconnected from AegisFlow Core');
+      setIsConnected(false);
+    };
 
     ws.current.onmessage = (event) => {
       const parsedData: SensorData = JSON.parse(event.data);
       
-      // If backend says "finished", we update state but don't add to history
+      // If backend says "finished", mark current data as finished
       if (parsedData.finished) {
         setData((prev) => prev ? { ...prev, finished: true } : null);
         return;
@@ -43,6 +47,10 @@ export const useMachineStream = () => {
         if (newHistory.length > 50) return newHistory.slice(newHistory.length - 50);
         return newHistory;
       });
+    };
+
+    ws.current.onerror = (error) => {
+      console.error('WebSocket error:', error);
     };
 
     return () => {

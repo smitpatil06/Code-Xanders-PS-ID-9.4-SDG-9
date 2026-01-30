@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { useMachineStream } from '../hooks/useMachineStream';
+import { useMachineStream } from '../hooks/UseMachineStream';
 import { 
   LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer 
 } from 'recharts';

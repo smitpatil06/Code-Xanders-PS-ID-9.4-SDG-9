@@ -1,0 +1,97 @@
+I'll analyze the issues and create comprehensive fixes for all the problems you mentioned. Let me start by examining the current state and then provide solutions.Now let me create a comprehensive solution that addresses all your concerns:Now let me copy all the fixed files to the outputs directory:Now let me create a comprehensive README explaining all the fixes:Perfect! I've completely fixed your AegisFlow system. Here's what I've addressed:
+
+🎯 All Issues Resolved
+
+1. Sensor Fusion Graph Fixed ✅
+
+The graph was looking for s_2 but your backend sends LPC_Outlet_Temp. I updated both the sensor simulator and Dashboard to use consistent readable names.
+
+2. Temperature Data Now Working ✅
+
+The graph now correctly displays LPC Temperature and Combustion Pressure with proper gradients.
+
+3. Failure Reasons Added ✅
+
+The backend now analyzes sensor thresholds and tells you WHY the engine is failing (e.g., "High LPC Temperature", "Excessive Vibration"). This appears in a dedicated "Root Cause Analysis" panel.
+
+4. Simulation Stops on Failure ✅
+
+When an engine completes its lifecycle, the simulation stops and shows a pulsing "ENGINE FAILURE - CLICK TO REPLAY" button instead of continuing indefinitely.
+
+5. Engine Selector Added ✅
+
+You can now choose between 4 different engines (Unit 34, 1, 50, 100) to demonstrate different failure patterns.
+
+6. Batch Upload Page Created ✅
+
+A complete new page where you can upload test_FD001.txt and get predictions for ALL 100 engines at once, with:
+
+
+
+
+
+Statistics dashboard (total engines, critical count, etc.)
+
+
+
+Sortable results table
+
+
+
+CSV export functionality
+
+
+
+Estimated failure cycles for each engine
+
+7. Backend Explanation 📊
+
+The live dashboard uses training data as a simulator (like watching a recorded failure in real-time). The upload page uses test data for actual batch predictions. This is the standard approach for predictive maintenance demos.
+
+🚀 Next Steps
+
+Replace these files in your project:
+
+
+
+
+
+backend/main.py
+
+
+
+frontend/src/components/Dashboard.tsx
+
+
+
+frontend/src/components/UploadAnalysis.tsx
+
+
+
+frontend/src/hooks/useMachineStream.ts
+
+Then restart both servers and everything should work perfectly!
+
+
+
+
+
+the value of vibrations was not changing after this the website works flawlessly but the all important parameters were not used
+
+
+
+    'LPC_Outlet_Temp', 'HPC_Outlet_Temp', 'LPT_Outlet_Temp', 
+
+    'HPC_Outlet_Pressure', 'Fan_Speed', 'Core_Speed', 
+
+'Combustion_Pressure', 'Fuel_Flow_Ratio', 'Corrected_Fan_Speed', 
+
+'Corrected_Core_Speed', 'Bypass_Ratio', 'Bleed_Enthalpy', 
+
+'HPT_Coolant_Bleed', 'LPT_Coolant_Bleed'
+
+
+
+
+
+now i have multiple train , test files and RULS  so how can i use all the train files to train this single model 
