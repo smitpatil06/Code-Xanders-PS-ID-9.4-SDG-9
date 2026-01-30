@@ -1,10 +1,11 @@
+// File: src/pages/Alerts.tsx
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AlertsTable from '../components/tables/AlertsTable';
 
 type FilterType = 'all' | 'critical' | 'warning' | 'acknowledged';
 
-const Alerts: React.FC = () => {
+const Alerts = () => {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
 
   const stats = {
@@ -17,19 +18,19 @@ const Alerts: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white p-8">
+    <div className="min-h-screen bg-gray-950 text-white p-6 lg:p-8">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-2">Predictive Maintenance Alerts</h1>
-        <p className="text-gray-400 text-lg">
+      <div className="mb-6">
+        <h1 className="text-3xl lg:text-4xl font-bold mb-2">Predictive Maintenance Alerts</h1>
+        <p className="text-gray-400 text-base lg:text-lg">
           Monitor and manage real-time equipment health notifications across the facility.
         </p>
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-6">
         {/* Total Active */}
-        <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+        <div className="bg-gray-900 rounded-xl p-5 lg:p-6 border border-gray-800">
           <div className="flex items-start justify-between mb-4">
             <div className="text-gray-400 text-sm font-medium">TOTAL ACTIVE</div>
             <div className="bg-blue-500/20 p-2 rounded-lg">
@@ -38,12 +39,12 @@ const Alerts: React.FC = () => {
               </svg>
             </div>
           </div>
-          <div className="text-5xl font-bold mb-2">{stats.totalActive}</div>
+          <div className="text-4xl lg:text-5xl font-bold mb-2">{stats.totalActive}</div>
           <div className="text-green-400 text-sm font-medium">{stats.percentChange}</div>
         </div>
 
         {/* Critical Priority */}
-        <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+        <div className="bg-gray-900 rounded-xl p-5 lg:p-6 border border-gray-800">
           <div className="flex items-start justify-between mb-4">
             <div className="text-gray-400 text-sm font-medium">CRITICAL PRIORITY</div>
             <div className="bg-red-500/20 p-2 rounded-lg">
@@ -52,12 +53,12 @@ const Alerts: React.FC = () => {
               </svg>
             </div>
           </div>
-          <div className="text-5xl font-bold mb-2">{stats.critical}</div>
+          <div className="text-4xl lg:text-5xl font-bold mb-2">{stats.critical}</div>
           <div className="text-red-400 text-sm font-medium">{stats.criticalResolved}</div>
         </div>
 
         {/* Warning Level */}
-        <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+        <div className="bg-gray-900 rounded-xl p-5 lg:p-6 border border-gray-800">
           <div className="flex items-start justify-between mb-4">
             <div className="text-gray-400 text-sm font-medium">WARNING LEVEL</div>
             <div className="bg-yellow-500/20 p-2 rounded-lg">
@@ -66,19 +67,19 @@ const Alerts: React.FC = () => {
               </svg>
             </div>
           </div>
-          <div className="text-5xl font-bold mb-2">{stats.warning}</div>
+          <div className="text-4xl lg:text-5xl font-bold mb-2">{stats.warning}</div>
           <div className="text-green-400 text-sm font-medium">{stats.warningMonitored}</div>
         </div>
       </div>
 
       {/* Filters and Table */}
-      <div className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+      <div className="bg-gray-900 rounded-xl border border-gray-800 p-4 lg:p-6">
         {/* Filter Buttons */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex gap-3">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 mb-6">
+          <div className="flex flex-wrap gap-2 lg:gap-3">
             <button
               onClick={() => setActiveFilter('all')}
-              className={`px-5 py-2.5 rounded-lg font-medium transition-all ${
+              className={`px-4 lg:px-5 py-2 lg:py-2.5 rounded-lg text-sm font-medium transition-all ${
                 activeFilter === 'all'
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-800 text-gray-300 hover:bg-gray-750'
@@ -91,7 +92,7 @@ const Alerts: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveFilter('critical')}
-              className={`px-5 py-2.5 rounded-lg font-medium transition-all ${
+              className={`px-4 lg:px-5 py-2 lg:py-2.5 rounded-lg text-sm font-medium transition-all ${
                 activeFilter === 'critical'
                   ? 'bg-gray-700 text-white'
                   : 'bg-gray-800 text-gray-300 hover:bg-gray-750'
@@ -104,7 +105,7 @@ const Alerts: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveFilter('warning')}
-              className={`px-5 py-2.5 rounded-lg font-medium transition-all ${
+              className={`px-4 lg:px-5 py-2 lg:py-2.5 rounded-lg text-sm font-medium transition-all ${
                 activeFilter === 'warning'
                   ? 'bg-gray-700 text-white'
                   : 'bg-gray-800 text-gray-300 hover:bg-gray-750'
@@ -117,7 +118,7 @@ const Alerts: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveFilter('acknowledged')}
-              className={`px-5 py-2.5 rounded-lg font-medium transition-all ${
+              className={`px-4 lg:px-5 py-2 lg:py-2.5 rounded-lg text-sm font-medium transition-all ${
                 activeFilter === 'acknowledged'
                   ? 'bg-gray-700 text-white'
                   : 'bg-gray-800 text-gray-300 hover:bg-gray-750'
