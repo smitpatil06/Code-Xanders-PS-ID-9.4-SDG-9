@@ -1,6 +1,5 @@
 .
 ├── 69293bf262d05_Central_India_Hackathon_Chapter_3.pptx
-├── archive.zip
 ├── assets
 │   ├── landing page.png
 │   ├── mahine asset detail view.png
@@ -716,6 +715,16 @@
 │   │           │   ├── REQUESTED
 │   │           │   ├── top_level.txt
 │   │           │   └── WHEEL
+│   │           ├── multipart
+│   │           │   ├── decoders.py
+│   │           │   ├── exceptions.py
+│   │           │   ├── __init__.py
+│   │           │   ├── multipart.py
+│   │           │   └── __pycache__
+│   │           │       ├── decoders.cpython-314.pyc
+│   │           │       ├── exceptions.cpython-314.pyc
+│   │           │       ├── __init__.cpython-314.pyc
+│   │           │       └── multipart.cpython-314.pyc
 │   │           ├── numpy
 │   │           │   ├── _array_api_info.py
 │   │           │   ├── _array_api_info.pyi
@@ -6775,6 +6784,25 @@
 │   │           │   ├── RECORD
 │   │           │   ├── top_level.txt
 │   │           │   └── WHEEL
+│   │           ├── python_multipart
+│   │           │   ├── decoders.py
+│   │           │   ├── exceptions.py
+│   │           │   ├── __init__.py
+│   │           │   ├── multipart.py
+│   │           │   ├── __pycache__
+│   │           │   │   ├── decoders.cpython-314.pyc
+│   │           │   │   ├── exceptions.cpython-314.pyc
+│   │           │   │   ├── __init__.cpython-314.pyc
+│   │           │   │   └── multipart.cpython-314.pyc
+│   │           │   └── py.typed
+│   │           ├── python_multipart-0.0.22.dist-info
+│   │           │   ├── INSTALLER
+│   │           │   ├── licenses
+│   │           │   │   └── LICENSE.txt
+│   │           │   ├── METADATA
+│   │           │   ├── RECORD
+│   │           │   ├── REQUESTED
+│   │           │   └── WHEEL
 │   │           ├── pyyaml-6.0.3.dist-info
 │   │           │   ├── INSTALLER
 │   │           │   ├── licenses
@@ -11828,80 +11856,85 @@
 │   └── pyvenv.cfg
 ├── CIH-Main
 │   ├── ai_engine
+│   │   ├── comprehensive_train_model.py
+│   │   ├── feature_info.joblib
 │   │   ├── inference.py
+│   │   ├── multi_dataset_rul_predictor.joblib
 │   │   ├── processing.py
-│   │   ├── __pycache__
-│   │   │   ├── inference.cpython-314.pyc
-│   │   │   └── processing.cpython-314.pyc
-│   │   ├── rul_predictor.joblib
-│   │   └── train_model.py
+│   │   └── __pycache__
+│   │       ├── inference.cpython-314.pyc
+│   │       ├── __init__.cpython-314.pyc
+│   │       └── processing.cpython-314.pyc
 │   ├── backend
 │   │   ├── main.py
 │   │   ├── __pycache__
-│   │   │   └── sensor_sim.cpython-314.pyc
-│   │   └── sensor_sim.py
-│   ├── data
-│   │   └── test_FD001.txt
-│   ├── frontend
-│   │   ├── API_INTEGRATION.md
-│   │   ├── eslint.config.js
-│   │   ├── file-structure.txt
-│   │   ├── FRONTEND_IMPROVEMENTS.md
-│   │   ├── index.html
-│   │   ├── node_modules
-│   │   │   ├── clsx -> .pnpm/clsx@2.1.1/node_modules/clsx
-│   │   │   ├── @eslint
-│   │   │   │   └── js -> ../.pnpm/@eslint+js@9.39.2/node_modules/@eslint/js
-│   │   │   ├── eslint -> .pnpm/eslint@9.39.2_jiti@2.6.1/node_modules/eslint
-│   │   │   ├── eslint-plugin-react-hooks -> .pnpm/eslint-plugin-react-hooks@7.0.1_eslint@9.39.2_jiti@2.6.1_/node_modules/eslint-plugin-react-hooks
-│   │   │   ├── eslint-plugin-react-refresh -> .pnpm/eslint-plugin-react-refresh@0.4.26_eslint@9.39.2_jiti@2.6.1_/node_modules/eslint-plugin-react-refresh
-│   │   │   ├── globals -> .pnpm/globals@16.5.0/node_modules/globals
-│   │   │   ├── lucide-react -> .pnpm/lucide-react@0.563.0_react@19.2.4/node_modules/lucide-react
-│   │   │   ├── react -> .pnpm/react@19.2.4/node_modules/react
-│   │   │   ├── react-dom -> .pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom
-│   │   │   ├── react-router-dom -> .pnpm/react-router-dom@7.13.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/react-router-dom
-│   │   │   ├── recharts -> .pnpm/recharts@3.7.0_@types+react@19.2.10_react-dom@19.2.4_react@19.2.4__react-is@19.2.4_react@19.2.4_redux@5.0.1/node_modules/recharts
-│   │   │   ├── @tailwindcss
-│   │   │   │   └── vite -> ../.pnpm/@tailwindcss+vite@4.1.18_vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_/node_modules/@tailwindcss/vite
-│   │   │   ├── tailwindcss -> .pnpm/tailwindcss@4.1.18/node_modules/tailwindcss
-│   │   │   ├── tailwind-merge -> .pnpm/tailwind-merge@3.4.0/node_modules/tailwind-merge
-│   │   │   ├── @types
-│   │   │   │   ├── node -> ../.pnpm/@types+node@24.10.9/node_modules/@types/node
-│   │   │   │   ├── react -> ../.pnpm/@types+react@19.2.10/node_modules/@types/react
-│   │   │   │   └── react-dom -> ../.pnpm/@types+react-dom@19.2.3_@types+react@19.2.10/node_modules/@types/react-dom
-│   │   │   ├── typescript -> .pnpm/typescript@5.9.3/node_modules/typescript
-│   │   │   ├── typescript-eslint -> .pnpm/typescript-eslint@8.54.0_eslint@9.39.2_jiti@2.6.1__typescript@5.9.3/node_modules/typescript-eslint
-│   │   │   ├── vite -> .pnpm/vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2/node_modules/vite
-│   │   │   └── @vitejs
-│   │   │       └── plugin-react -> ../.pnpm/@vitejs+plugin-react@5.1.2_vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_/node_modules/@vitejs/plugin-react
-│   │   ├── package.json
-│   │   ├── pnpm-lock.yaml
-│   │   ├── public
-│   │   │   └── vite.svg
-│   │   ├── README.md
-│   │   ├── src
-│   │   │   ├── App.css
-│   │   │   ├── App.tsx
-│   │   │   ├── assets
-│   │   │   │   ├── icons
-│   │   │   │   ├── images
-│   │   │   │   ├── logos
-│   │   │   │   └── react.svg
-│   │   │   ├── components
-│   │   │   │   └── Dashboard.tsx
-│   │   │   ├── hooks
-│   │   │   │   └── useMachineStream.ts
-│   │   │   ├── index.css
-│   │   │   └── main.tsx
-│   │   ├── tailwind.config.ts
-│   │   ├── tsconfig.app.json
-│   │   ├── tsconfig.json
-│   │   ├── tsconfig.node.json
-│   │   └── vite.config.ts
-│   ├── INTEGRATION_SUMMARY.md
-│   └── system setting and model info.png
+│   │   │   ├── __init__.cpython-314.pyc
+│   │   │   ├── main.cpython-314.pyc
+│   │   │   ├── sensor_sim.cpython-314.pyc
+│   │   │   └── sensor_sim_fixed.cpython-314.pyc
+│   │   └── sensor_sim_fixed.py
+│   └── frontend
+│       ├── API_INTEGRATION.md
+│       ├── eslint.config.js
+│       ├── file-structure.txt
+│       ├── FRONTEND_IMPROVEMENTS.md
+│       ├── index.html
+│       ├── node_modules
+│       │   ├── clsx -> .pnpm/clsx@2.1.1/node_modules/clsx
+│       │   ├── @eslint
+│       │   │   └── js -> ../.pnpm/@eslint+js@9.39.2/node_modules/@eslint/js
+│       │   ├── eslint -> .pnpm/eslint@9.39.2_jiti@2.6.1/node_modules/eslint
+│       │   ├── eslint-plugin-react-hooks -> .pnpm/eslint-plugin-react-hooks@7.0.1_eslint@9.39.2_jiti@2.6.1_/node_modules/eslint-plugin-react-hooks
+│       │   ├── eslint-plugin-react-refresh -> .pnpm/eslint-plugin-react-refresh@0.4.26_eslint@9.39.2_jiti@2.6.1_/node_modules/eslint-plugin-react-refresh
+│       │   ├── globals -> .pnpm/globals@16.5.0/node_modules/globals
+│       │   ├── lucide-react -> .pnpm/lucide-react@0.563.0_react@19.2.4/node_modules/lucide-react
+│       │   ├── react -> .pnpm/react@19.2.4/node_modules/react
+│       │   ├── react-dom -> .pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom
+│       │   ├── react-router-dom -> .pnpm/react-router-dom@7.13.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/react-router-dom
+│       │   ├── recharts -> .pnpm/recharts@3.7.0_@types+react@19.2.10_react-dom@19.2.4_react@19.2.4__react-is@19.2.4_react@19.2.4_redux@5.0.1/node_modules/recharts
+│       │   ├── @tailwindcss
+│       │   │   └── vite -> ../.pnpm/@tailwindcss+vite@4.1.18_vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_/node_modules/@tailwindcss/vite
+│       │   ├── tailwindcss -> .pnpm/tailwindcss@4.1.18/node_modules/tailwindcss
+│       │   ├── tailwind-merge -> .pnpm/tailwind-merge@3.4.0/node_modules/tailwind-merge
+│       │   ├── @types
+│       │   │   ├── node -> ../.pnpm/@types+node@24.10.9/node_modules/@types/node
+│       │   │   ├── react -> ../.pnpm/@types+react@19.2.10/node_modules/@types/react
+│       │   │   └── react-dom -> ../.pnpm/@types+react-dom@19.2.3_@types+react@19.2.10/node_modules/@types/react-dom
+│       │   ├── typescript -> .pnpm/typescript@5.9.3/node_modules/typescript
+│       │   ├── typescript-eslint -> .pnpm/typescript-eslint@8.54.0_eslint@9.39.2_jiti@2.6.1__typescript@5.9.3/node_modules/typescript-eslint
+│       │   ├── vite -> .pnpm/vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2/node_modules/vite
+│       │   └── @vitejs
+│       │       └── plugin-react -> ../.pnpm/@vitejs+plugin-react@5.1.2_vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_/node_modules/@vitejs/plugin-react
+│       ├── package.json
+│       ├── pnpm-lock.yaml
+│       ├── public
+│       │   └── vite.svg
+│       ├── README.md
+│       ├── src
+│       │   ├── App.css
+│       │   ├── App.tsx
+│       │   ├── assets
+│       │   │   ├── icons
+│       │   │   ├── images
+│       │   │   ├── logos
+│       │   │   └── react.svg
+│       │   ├── components
+│       │   │   ├── Dashboard_Premium.tsx
+│       │   │   ├── Landing.tsx
+│       │   │   └── UploadAnalysis.tsx
+│       │   ├── hooks
+│       │   │   └── UseMachineStream.ts
+│       │   ├── index.css
+│       │   └── main.tsx
+│       ├── tailwind.config.ts
+│       ├── tsconfig.app.json
+│       ├── tsconfig.json
+│       ├── tsconfig.node.json
+│       └── vite.config.ts
 ├── dataset
 │   ├── Damage Propagation Modeling.pdf
+│   ├── predicting-turbofan-engine-rul.ipynb
+│   ├── prompt.txt
 │   ├── readme.txt
 │   ├── RUL_FD001.txt
 │   ├── RUL_FD002.txt
@@ -11916,6 +11949,7 @@
 │   ├── train_FD003.txt
 │   └── train_FD004.txt
 ├── file-structure.txt
-└── README.md
+├── README.md
+└── requirements.txt
 
-1283 directories, 10636 files
+1288 directories, 10665 files
