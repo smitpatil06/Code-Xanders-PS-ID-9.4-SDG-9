@@ -7,8 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 
 # PATH CONFIGURATION
-# Assuming we are running this from 'CIH-Main/ai_engine/'
-# And dataset is in 'dataset/train_FD001.txt' (at the project root level)
+# Adjusted to point to the file you uploaded in the root 'dataset' folder
 DATA_PATH = '../../dataset/train_FD001.txt' 
 
 def train():
@@ -16,17 +15,14 @@ def train():
     try:
         df = load_data(DATA_PATH)
     except FileNotFoundError:
-        print("Error: Dataset not found. Check your path!")
+        print(f"Error: Dataset not found at {os.path.abspath(DATA_PATH)}")
         return
 
     # 1. Separate Features and Target
-    # We drop 'unit_nr' and 'time_cycles' because the model shouldn't memorize units
     X = df.drop(columns=['unit_nr', 'time_cycles', 'RUL'])
     y = df['RUL']
 
-    # 2. Clip RUL (Important Trick)
-    # We don't care if RUL is 200 or 150. We care about < 50. 
-    # Clipping at 125 helps the model focus on the "danger zone".
+    # 2. Clip RUL
     y = y.clip(upper=125)
 
     # 3. Split Training/Testing
@@ -42,9 +38,11 @@ def train():
     )
     model.fit(X_train, y_train)
 
-    # 5. Evaluate
+    # 5. Evaluate (FIXED FOR SKLEARN 1.4+)
     predictions = model.predict(X_test)
-    rmse = mean_squared_error(y_test, predictions, squared=False)
+    mse = mean_squared_error(y_test, predictions)
+    rmse = mse ** 0.5  # Manual calculation of RMSE
+    
     print(f"Training Complete. Model RMSE: {rmse:.2f} cycles")
     print("Interpretation: On average, the prediction is off by ~15-20 cycles.")
 

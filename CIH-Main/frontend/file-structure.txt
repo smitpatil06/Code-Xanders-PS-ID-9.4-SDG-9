@@ -1,0 +1,52 @@
+.
+├── API_INTEGRATION.md
+├── eslint.config.js
+├── file-structure.txt
+├── FRONTEND_IMPROVEMENTS.md
+├── index.html
+├── node_modules
+│   ├── @eslint
+│   │   └── js -> ../.pnpm/@eslint+js@9.39.2/node_modules/@eslint/js
+│   ├── eslint -> .pnpm/eslint@9.39.2_jiti@2.6.1/node_modules/eslint
+│   ├── eslint-plugin-react-hooks -> .pnpm/eslint-plugin-react-hooks@7.0.1_eslint@9.39.2_jiti@2.6.1_/node_modules/eslint-plugin-react-hooks
+│   ├── eslint-plugin-react-refresh -> .pnpm/eslint-plugin-react-refresh@0.4.26_eslint@9.39.2_jiti@2.6.1_/node_modules/eslint-plugin-react-refresh
+│   ├── globals -> .pnpm/globals@16.5.0/node_modules/globals
+│   ├── react -> .pnpm/react@19.2.4/node_modules/react
+│   ├── react-dom -> .pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom
+│   ├── react-router-dom -> .pnpm/react-router-dom@7.13.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/react-router-dom
+│   ├── @tailwindcss
+│   │   └── vite -> ../.pnpm/@tailwindcss+vite@4.1.18_vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_/node_modules/@tailwindcss/vite
+│   ├── tailwindcss -> .pnpm/tailwindcss@4.1.18/node_modules/tailwindcss
+│   ├── @types
+│   │   ├── node -> ../.pnpm/@types+node@24.10.9/node_modules/@types/node
+│   │   ├── react -> ../.pnpm/@types+react@19.2.10/node_modules/@types/react
+│   │   └── react-dom -> ../.pnpm/@types+react-dom@19.2.3_@types+react@19.2.10/node_modules/@types/react-dom
+│   ├── typescript -> .pnpm/typescript@5.9.3/node_modules/typescript
+│   ├── typescript-eslint -> .pnpm/typescript-eslint@8.54.0_eslint@9.39.2_jiti@2.6.1__typescript@5.9.3/node_modules/typescript-eslint
+│   ├── vite -> .pnpm/vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2/node_modules/vite
+│   └── @vitejs
+│       └── plugin-react -> ../.pnpm/@vitejs+plugin-react@5.1.2_vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_/node_modules/@vitejs/plugin-react
+├── package.json
+├── pnpm-lock.yaml
+├── public
+│   └── vite.svg
+├── README.md
+├── src
+│   ├── App.css
+│   ├── App.tsx
+│   ├── assets
+│   │   ├── icons
+│   │   ├── images
+│   │   ├── logos
+│   │   └── react.svg
+│   ├── components
+│   │   └── Dashboard.tsx
+│   ├── index.css
+│   └── main.tsx
+├── tailwind.config.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+
+30 directories, 20 files
