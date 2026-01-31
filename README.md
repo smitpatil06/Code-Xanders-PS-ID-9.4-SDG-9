@@ -274,7 +274,7 @@ Prognostics and Health Management (PHM08), Denver CO, Oct 2008.
 
 For detailed information about frontend development, API integration, and component architecture, please refer to:
 
-- **[Frontend Improvements Guide](CIH-Main/frontend/FRONTEND_IMPROVEMENTS.md)** - Comprehensive guide covering:
+- **[Frontend Improvements Guide](./CIH-Main/frontend/FRONTEND_IMPROVEMENTS.md)** - Comprehensive guide covering:
   - Enhanced dashboard features
   - Toast notification system
   - Error boundary components
@@ -282,7 +282,7 @@ For detailed information about frontend development, API integration, and compon
   - Custom React hooks
   - Animation and styling improvements
 
-- **[API Integration Guide](CIH-Main/frontend/API_INTEGRATION.md)** - Complete API reference including:
+- **[API Integration Guide](./CIH-Main/frontend/API_INTEGRATION.md)** - Complete API reference including:
   - Backend setup instructions
   - Service layer architecture
   - TypeScript type definitions
