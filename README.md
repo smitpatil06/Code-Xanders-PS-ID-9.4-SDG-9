@@ -384,6 +384,8 @@ Default configuration:
 ```env
 VITE_API_URL=http://localhost:8000
 VITE_WS_URL=ws://localhost:8000/ws
+VITE_POLLING_INTERVAL=5000
+VITE_USE_MOCK_DATA=false
 ```
 
 #### Verify Frontend Installation
@@ -551,6 +553,11 @@ Predictions → Dashboard → Alerts → Maintenance Actions
 ## 🔮 Future Enhancements
 
 ### Planned Features
+- [x] **Batch upload & analysis** for multiple engines (Implemented)
+- [x] **Real-time WebSocket streaming** (Implemented)
+- [x] **Toast notifications** for user feedback (Implemented)
+- [x] **Error boundaries** for graceful error handling (Implemented)
+- [x] **Loading skeletons** for better UX (Implemented)
 - [ ] **Multi-site deployment** with centralized monitoring
 - [ ] **Mobile app** for on-the-go alerts
 - [ ] **Advanced ML models** (LSTM, Transformer)
