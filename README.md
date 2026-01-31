@@ -116,6 +116,15 @@ This project directly supports Sustainable Development Goal 9 by promoting:
 - **Historical trend analysis**
 - **Batch analysis** for multiple assets
 
+### 🎨 Modern UI/UX Features
+- **Toast notification system** with multiple types (success, error, warning, info)
+- **Error boundaries** for graceful error handling
+- **Skeleton loaders** for smooth loading states
+- **Responsive design** optimized for all screen sizes
+- **Animated transitions** and smooth interactions
+- **Glassmorphism effects** with backdrop blur
+- **Mobile-responsive navigation** with hamburger menu
+
 ### 🚨 Intelligent Alerting
 - **Threshold-based alerts** for anomaly detection
 - **Severity classification** (Critical, Warning, Info)
@@ -155,10 +164,12 @@ This project directly supports Sustainable Development Goal 9 by promoting:
 - **Recharts** — Data visualization library
 - **React Router** — Client-side routing
 - **Lucide React** — Beautiful icon library
+- **clsx** — Utility for constructing className strings
+- **tailwind-merge** — Merge Tailwind CSS classes
 
 ### DevOps & Tools
 - **Git** — Version control
-- **npm** — Package management (easier setup than pnpm)
+- **pnpm** — Fast, disk space efficient package manager
 - **ESLint** — Code quality and consistency
 - **Python venv** — Virtual environment management
 
@@ -196,9 +207,17 @@ This project directly supports Sustainable Development Goal 9 by promoting:
 
 **1. Frontend (`CIH-Main/frontend/`)**
 - `src/components/` — Reusable UI components
+  - `Dashboard_Premium.tsx` — Enhanced dashboard with real-time monitoring
+  - `Landing.tsx` — Landing page component
+  - `UploadAnalysis.tsx` — Batch file upload and analysis
 - `src/pages/` — Application pages (Dashboard, Analytics, etc.)
-- `src/hooks/` — Custom React hooks for API integration
+- `src/hooks/` — Custom React hooks
+  - `UseMachineStream.ts` — WebSocket hook for real-time data
+  - Custom hooks for API integration and data fetching
 - `src/services/` — API client and WebSocket handlers
+- **Documentation:**
+  - `API_INTEGRATION.md` — Complete API integration guide
+  - `FRONTEND_IMPROVEMENTS.md` — Frontend enhancements documentation
 
 **2. Backend (`CIH-Main/backend/`)**
 - `main.py` — FastAPI application with REST and WebSocket endpoints
@@ -249,13 +268,38 @@ Prognostics and Health Management (PHM08), Denver CO, Oct 2008.
 
 ---
 
+## 📚 Additional Documentation
+
+### Frontend Development
+
+For detailed information about frontend development, API integration, and component architecture, please refer to:
+
+- **[Frontend Improvements Guide](CIH-Main/frontend/FRONTEND_IMPROVEMENTS.md)** - Comprehensive guide covering:
+  - Enhanced dashboard features
+  - Toast notification system
+  - Error boundary components
+  - Skeleton loaders for better UX
+  - Custom React hooks
+  - Animation and styling improvements
+
+- **[API Integration Guide](CIH-Main/frontend/API_INTEGRATION.md)** - Complete API reference including:
+  - Backend setup instructions
+  - Service layer architecture
+  - TypeScript type definitions
+  - Custom hooks for data fetching
+  - WebSocket integration examples
+  - Error handling patterns
+
+---
+
 ## 🚀 Installation & Setup
 
 ### Prerequisites
 
 Before you begin, ensure you have the following installed:
 - **Python 3.9 or higher** ([Download](https://www.python.org/downloads/))
-- **Node.js 18+ and npm** ([Download](https://nodejs.org/))
+- **Node.js 18+** ([Download](https://nodejs.org/))
+- **pnpm** ([Install guide](https://pnpm.io/installation)) — `npm install -g pnpm`
 - **Git** ([Download](https://git-scm.com/))
 
 ### Step 1: Clone the Repository
@@ -308,21 +352,24 @@ python -c "import fastapi, uvicorn; print('Backend dependencies OK!')"
 
 #### Install Node Dependencies
 
-**Important:** We use **npm** instead of pnpm for easier setup and broader compatibility.
+**Important:** This project uses **pnpm** for better performance and disk space efficiency.
 
 ```bash
 cd CIH-Main/frontend
 
-# Install dependencies with npm
-npm install
+# Install pnpm if you haven't already
+npm install -g pnpm
+
+# Install dependencies with pnpm
+pnpm install
 ```
 
-**Why npm over pnpm?**
-- ✅ Comes pre-installed with Node.js (no extra setup)
-- ✅ More widely used and documented
-- ✅ Better compatibility across different environments
-- ✅ Simpler for team members and contributors
-- ✅ Faster onboarding for new developers
+**Why pnpm?**
+- ✅ Faster installation and updates
+- ✅ More efficient disk space usage (hard links instead of copying)
+- ✅ Strict dependency resolution (better security)
+- ✅ Better monorepo support
+- ✅ Compatible with npm ecosystem
 
 #### Configure Environment Variables (Optional)
 
@@ -342,7 +389,7 @@ VITE_WS_URL=ws://localhost:8000/ws
 #### Verify Frontend Installation
 
 ```bash
-npm run build
+pnpm run build
 echo "Frontend dependencies OK!"
 ```
 
@@ -374,7 +421,7 @@ uvicorn main:app --reload --port 8000
 cd CIH-Main/frontend
 
 # Start development server
-npm run dev
+pnpm run dev
 ```
 
 #### Option 2: Single Command (Advanced)
@@ -382,7 +429,7 @@ npm run dev
 ```bash
 # From repository root
 # Backend in background, frontend in foreground
-(cd CIH-Main/backend && source ../../.venv/bin/activate && uvicorn main:app --reload --port 8000 &) && cd CIH-Main/frontend && npm run dev
+(cd CIH-Main/backend && source ../../.venv/bin/activate && uvicorn main:app --reload --port 8000 &) && cd CIH-Main/frontend && pnpm run dev
 ```
 
 ### Accessing the Application
@@ -555,12 +602,12 @@ ls ../ai_engine/multi_dataset_rul_predictor.joblib
 
 ### Frontend Issues
 
-**Problem:** `npm install` fails
+**Problem:** `pnpm install` fails
 ```bash
 # Solution: Clear cache and retry
-npm cache clean --force
-rm -rf node_modules package-lock.json
-npm install
+pnpm store prune
+rm -rf node_modules pnpm-lock.yaml
+pnpm install
 ```
 
 **Problem:** Port 5173 already in use
@@ -587,6 +634,33 @@ curl http://localhost:8000
 # Solution: Verify dataset directory
 ls dataset/train_FD001.txt
 # Ensure files are in the correct location
+```
+
+### Package Manager Issues
+
+**Problem:** Don't have pnpm installed
+```bash
+# Solution: Install pnpm globally
+npm install -g pnpm
+# Verify installation
+pnpm --version
+```
+
+**Problem:** pnpm command not found after installation
+```bash
+# Solution: Add pnpm to PATH or use npx
+npx pnpm install
+# Or reinstall with:
+npm install -g pnpm --force
+```
+
+**Problem:** Want to use npm instead of pnpm
+```bash
+# Solution: Delete pnpm-lock.yaml and use npm
+cd CIH-Main/frontend
+rm pnpm-lock.yaml
+npm install
+# Note: This may cause dependency version differences
 ```
 
 ---
