@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![AegisFlow Banner](assets/landing%20page.png)
+![AegisFlow Banner](assets/landing-page.png)
 
 **Central India Hackathon (CIH) — Chapter 3**
 
@@ -445,28 +445,12 @@ Once both servers are running:
 ## 📸 Screenshots
 
 ### Landing Page
-![Landing Page](assets/landing%20page.png)
+![Landing Page](assets/landing-page.png)
 *Welcome screen with project overview and team information*
 
 ### Operational Dashboard
-![Dashboard](assets/operational%20dashboard%20overview.png)
+![Dashboard](assets/Main-Dashboard.png)
 *Real-time monitoring with live sensor data and alerts*
-
-### Asset Detail View
-![Asset Detail](assets/mahine%20asset%20detail%20view.png)
-*Detailed view of individual engine health and predictions*
-
-### Maintenance Analytics
-![Analytics](assets/maintenance%20analytic%20and%20insight.png)
-*Comprehensive analytics and maintenance insights*
-
-### Predictive Maintenance
-![Predictions](assets/predictive%20maintenance.png)
-*RUL predictions and degradation curves*
-
-### System Settings
-![Settings](assets/system%20setting%20and%20model%20info.png)
-*Configuration and model performance information*
 
 ---
 
