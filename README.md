@@ -22,12 +22,12 @@
 
 ## 👥 Team Code Xanders
 
-| Name | Role |
-|------|------|
-| **Vaishnav Raut** | Team Lead & Backend Developer |
-| **Smit Patil** | AI/ML Engineer & Full Stack Developer |
-| **Vaidehee Daf** | Frontend Developer & UI/UX Designer |
-| **Yukti Raurkar** | Data Scientist & ML Engineer |
+| Name | Role | GitHub |
+|------|------|--------|
+| **Vaishnav Raut** | Team Lead & Backend Developer | [@Vaishnavraut10](https://github.com/Vaishnavraut10) |
+| **Smit Patil** | AI/ML Engineer & Full Stack Developer | [@smitpatil06](https://github.com/smitpatil06) |
+| **Vaidehee Daf** | Frontend Developer & UI/UX Designer | [@vaideheedaf](https://github.com/vaideheedaf) |
+| **Yukti Raurkar** | Data Scientist & ML Engineer | [@yuktirajurkar](https://github.com/yuktirajurkar) |
 
 ---
 

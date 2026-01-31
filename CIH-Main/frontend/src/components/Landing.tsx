@@ -31,10 +31,26 @@ export default function Landing({ onEnter }: { onEnter: () => void }) {
               <p className="mb-3">Team name: <span className="text-blue-400 font-semibold">Code Xanders</span></p>
               <p className="mb-2">Project made by:</p>
               <ul className="list-disc list-inside space-y-1 mb-3">
-                <li>Vaishnav Raut</li>
-                <li>Smit Patil</li>
-                <li>Vaidehee Daf</li>
-                <li>Yukti Raurkar</li>
+                <li>
+                  <a href="https://github.com/Vaishnavraut10" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 hover:underline">
+                    Vaishnav Raut
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/smitpatil06" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 hover:underline">
+                    Smit Patil
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/vaideheedaf" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 hover:underline">
+                    Vaidehee Daf
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/yuktirajurkar" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 hover:underline">
+                    Yukti Raurkar
+                  </a>
+                </li>
               </ul>
               <div className="text-sm">
                 <div className="mb-1">
