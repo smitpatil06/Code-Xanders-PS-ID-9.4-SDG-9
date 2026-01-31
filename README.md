@@ -519,6 +519,14 @@ Once both servers are running:
 ![Dashboard](assets/Main-Dashboard.png)
 *Real-time monitoring with live sensor data and alerts*
 
+### Batch Upload Analysis
+![Batch Analysis](assets/batch-analysis.png)
+*Upload and analyze multiple engines simultaneously with comprehensive statistics*
+
+### Admin Panel
+![Admin Panel](assets/Admin.png)
+*System settings and configuration dashboard*
+
 ---
 
 ## 🔬 How It Works
