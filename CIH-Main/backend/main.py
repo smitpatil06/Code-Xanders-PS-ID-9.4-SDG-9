@@ -231,6 +231,10 @@ async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     print("🔌 Client connected to Live Stream")
     
+    # CRITICAL: Reset simulator to cycle 0 for each new connection
+    sim.reset()
+    print("✓ Simulator reset to cycle 0")
+    
     try:
         while True:
             raw_data = sim.get_next_cycle()

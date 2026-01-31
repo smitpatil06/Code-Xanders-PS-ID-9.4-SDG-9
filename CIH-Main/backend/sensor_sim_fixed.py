@@ -1,7 +1,7 @@
 """
-FIXED SENSOR SIMULATOR - Sends ALL 14 Sensors Properly
-========================================================
-This ensures vibration (LPT_Coolant_Bleed) and all other sensors are transmitted correctly.
+FIXED SENSOR SIMULATOR - Resets to Cycle 0 on Each Connection
+==============================================================
+This ensures each WebSocket connection starts from the beginning of the engine's lifecycle.
 """
 
 import pandas as pd
@@ -77,6 +77,14 @@ class EngineSimulator:
         else:
             print(f"❌ No data found for Engine #{unit_id}")
 
+    def reset(self):
+        """
+        Reset the simulator to cycle 0 for the current engine.
+        This should be called at the start of each WebSocket connection.
+        """
+        self.current_idx = 0
+        print(f"🔄 Simulator reset to cycle 0 for Engine #{self.current_unit}")
+
     def get_next_cycle(self):
         """
         Returns row dict with ALL sensor data or None if finished
@@ -104,6 +112,14 @@ class EngineSimulator:
             print(f"⚠️  Warning: Missing sensors in cycle {self.current_idx}: {missing}")
         
         return row
+
+    def get_current_cycle(self):
+        """Return the current cycle number (0-based index)"""
+        return self.current_idx
+
+    def get_total_cycles(self):
+        """Return total number of cycles for current engine"""
+        return len(self.unit_data)
 
     def get_sensor_info(self):
         """Return information about all sensors"""
@@ -224,6 +240,17 @@ if __name__ == "__main__":
             print(f"  LPC_Outlet_Temp: {cycle_data.get('LPC_Outlet_Temp', 'N/A'):.2f}")
             print(f"  LPT_Coolant_Bleed (Vibration): {cycle_data.get('LPT_Coolant_Bleed', 'N/A'):.4f}")
             print(f"  Total sensors: {len([k for k in cycle_data.keys() if not k.startswith('setting') and k not in ['unit_nr', 'time_cycles']])}")
+    
+    print("\n" + "="*80)
+    print("Testing reset functionality...")
+    print("="*80)
+    
+    # Reset and verify
+    sim.reset()
+    cycle_data = sim.get_next_cycle()
+    if cycle_data:
+        print(f"\nAfter reset - Cycle: {cycle_data.get('time_cycles', 'N/A')}")
+        print("✓ Reset successful - back to cycle 1")
     
     print("\n" + "="*80)
     print("✓ Simulator test complete!")
