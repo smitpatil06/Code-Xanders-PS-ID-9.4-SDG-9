@@ -37,7 +37,6 @@
 - [Problem Statement](#-problem-statement)
 - [Key Features](#-key-features)
 - [Technology Stack](#-technology-stack)
-- [Architecture](#-architecture)
 - [Dataset Information](#-dataset-information)
 - [Additional Documentation](#-additional-documentation)
 - [Installation & Setup](#-installation--setup)
