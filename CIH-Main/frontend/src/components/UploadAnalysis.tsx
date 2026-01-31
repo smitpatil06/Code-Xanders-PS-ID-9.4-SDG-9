@@ -11,7 +11,12 @@ interface ReportRow {
   confidence: number;
 }
 
-export default function UploadAnalysis({ onBack }: { onBack: () => void }) {
+interface UploadAnalysisProps {
+  onBack: () => void;
+  token: string;
+}
+
+export default function UploadAnalysis({ onBack, token }: UploadAnalysisProps) {
   const [file, setFile] = useState<File | null>(null);
   const [report, setReport] = useState<ReportRow[]>([]);
   const [loading, setLoading] = useState(false);
@@ -28,6 +33,9 @@ export default function UploadAnalysis({ onBack }: { onBack: () => void }) {
     try {
       const res = await fetch('http://localhost:8000/upload_test', {
         method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
         body: formData
       });
       

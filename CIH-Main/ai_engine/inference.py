@@ -67,3 +67,9 @@ predictor = StatefulPredictor()
 def predict_rul(sensor_data):
     # Wrapper function to keep compatibility with backend
     return predictor.predict(sensor_data)
+
+def reset_predictor():
+    """Reset the predictor history to start fresh"""
+    global predictor
+    predictor = StatefulPredictor()
+    return True

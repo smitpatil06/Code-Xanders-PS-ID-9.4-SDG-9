@@ -1,8 +1,8 @@
 import { useMemo, useState, useEffect } from 'react';
 import { useMachineStream } from '../hooks/UseMachineStream';
 import { 
-  LineChart, Line, AreaChart, Area, BarChart, Bar,
-  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend
+  LineChart, Line, AreaChart, Area,
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 import { 
   AlertTriangle, CheckCircle, Activity, Zap, Gauge, RotateCcw, Upload,
@@ -64,7 +64,19 @@ const NASA_ABBREVIATIONS = {
   'RUL': 'Remaining Useful Life'
 };
 
-export default function Dashboard() {
+interface User {
+  username: string;
+  email: string;
+  role: string;
+}
+
+interface DashboardProps {
+  user: User | null;
+  token: string;
+  onLogout: () => void;
+}
+
+export default function Dashboard({ user, token, onLogout }: DashboardProps) {
   const { data, history, isConnected } = useMachineStream();
   const [selectedEngine, setSelectedEngine] = useState(34);
   const [showUpload, setShowUpload] = useState(false);
@@ -74,7 +86,10 @@ export default function Dashboard() {
     setSelectedEngine(id);
     await fetch('http://localhost:8000/set_engine', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
       body: JSON.stringify({ unit_id: id })
     });
   };
@@ -108,7 +123,7 @@ export default function Dashboard() {
     
     const statuses: Record<string, any> = {};
     
-    Object.entries(SENSOR_GROUPS).forEach(([groupKey, group]) => {
+    Object.entries(SENSOR_GROUPS).forEach(([, group]) => {
       Object.entries(group.sensors).forEach(([sensorKey, config]) => {
         const value = data.sensors[sensorKey] || 0;
         const deviation = ((value - config.max) / config.max) * 100;
@@ -192,7 +207,7 @@ export default function Dashboard() {
   }, [sensorStatuses, stickyCriticals]);
 
   if (showUpload) {
-    return <UploadAnalysis onBack={() => setShowUpload(false)} />;
+    return <UploadAnalysis onBack={() => setShowUpload(false)} token={token} />;
   }
 
   if (!isConnected) {
@@ -262,11 +277,27 @@ export default function Dashboard() {
               >
                 <RotateCcw size={16} /> Reset
               </button>
+
+              <button 
+                onClick={onLogout}
+                className="flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white text-sm px-4 py-2 rounded-lg transition-all"
+              >
+                Logout
+              </button>
             </div>
           </div>
 
-          {/* Right: Status Indicator */}
+          {/* Right: Status Indicator & User Info */}
           <div className="flex items-center gap-6">
+            {/* User Info */}
+            {user && (
+              <div className="text-right border-r border-slate-700 pr-6">
+                <div className="text-xs text-slate-500 mb-1">LOGGED IN AS</div>
+                <div className="text-sm font-bold text-white">{user.username}</div>
+                <div className="text-xs text-blue-400">{user.role}</div>
+              </div>
+            )}
+
             <div className="text-right">
               <div className="text-xs text-slate-500 mb-1">SYSTEM STATUS</div>
               <div className={`text-2xl font-black ${statusColor}`}>
