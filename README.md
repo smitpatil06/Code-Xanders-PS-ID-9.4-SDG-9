@@ -39,7 +39,6 @@
 - [Technology Stack](#-technology-stack)
 - [Architecture](#-architecture)
 - [Dataset Information](#-dataset-information)
-- [Additional Documentation](#-additional-documentation)
 - [Installation & Setup](#-installation--setup)
 - [Usage Guide](#-usage-guide)
 - [Screenshots](#-screenshots)
@@ -266,47 +265,6 @@ A. Saxena, K. Goebel, D. Simon, and N. Eklund, "Damage Propagation Modeling
 for Aircraft Engine Run-to-Failure Simulation", International Conference on 
 Prognostics and Health Management (PHM08), Denver CO, Oct 2008.
 ```
-
----
-
-## 📚 Additional Documentation
-
-### Frontend Development
-
-For detailed information about frontend development, API integration, and component architecture, please refer to:
-
-- **[Frontend Improvements Guide](./CIH-Main/frontend/FRONTEND_IMPROVEMENTS.md)** - Comprehensive guide covering:
-  - Enhanced dashboard features
-  - Toast notification system
-  - Error boundary components
-  - Skeleton loaders for better UX
-  - Custom React hooks
-  - Animation and styling improvements
-
-- **[API Integration Guide](./CIH-Main/frontend/API_INTEGRATION.md)** - Complete API reference including:
-  - Backend setup instructions
-  - Service layer architecture
-  - TypeScript type definitions
-  - Custom hooks for data fetching
-  - WebSocket integration examples
-  - Error handling patterns
-
-### Machine Learning & Technical Documentation
-
-For in-depth technical analysis of the machine learning models and implementation details:
-
-- **[Model Comparison Guide](./MODEL_COMPARISON.md)** - Comprehensive comparison of ML models including:
-  - Performance metrics (RMSE, R², training time, inference time)
-  - Strengths and weaknesses matrix for each model
-  - Use case recommendations
-  - Detailed analysis of Linear Regression, Decision Trees, Random Forest, SVR, XGBoost, LSTM, and Transformers
-
-- **[Technical Deep Dive](./TECHNICAL_DEEP_DIVE.md)** - In-depth technical documentation covering:
-  - Problem formulation and mathematical foundation
-  - Detailed justification for XGBoost model selection
-  - Comparison with alternative approaches
-  - Long-term upgrade pathways
-  - Interview-ready technical explanations
 
 ---
 
